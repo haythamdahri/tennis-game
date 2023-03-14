@@ -1,0 +1,41 @@
+# IDEA Files
+.idea/
+*.iml*
+
+# Maven files
+target/
+
+# Spring local files
+application-local.properties
+src/main/resources/config/application-local.properties
+
+# Git merge file
+*.orig
+
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+/bin/**
+/tmp/**
+/tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+.factorypath
+local.properties
+.classpath
+.settings/**
+.loadpath
+/src/main/resources/rebel.xml
+
+LOG_PATH_IS_UNDEFINED/
+
+# Vscode File
+.vscode
+
+# Flatten Maven
+.flattened-pom.xml
