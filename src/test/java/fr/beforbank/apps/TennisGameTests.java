@@ -42,6 +42,14 @@ public class TennisGameTests {
         assertNull(tennisGame.getWinner());
     }
 
+    @ParameterizedTest
+    @MethodSource("finishedGames")
+    void playGame_shouldPickPlayerAfterExchanges(final String players, final Player winner) {
+        final TennisGame tennisGame = new TennisGame();
+        tennisGame.play(players);
+        assertEquals(winner, tennisGame.getWinner());
+    }
+
     private static Stream<Arguments> unfinishedGames() {
         return Stream.of(
                 Arguments.of("A"),
@@ -61,6 +69,16 @@ public class TennisGameTests {
                 Arguments.of("BBBAA"),
                 Arguments.of("BBBAAA"),
                 Arguments.of("ABABABABABABABABABABABABAB")
+        );
+    }
+
+    private static Stream<Arguments> finishedGames() {
+        return Stream.of(
+                Arguments.of("AAAA", Player.A),
+                Arguments.of("BBBB", Player.B),
+                Arguments.of("AAABBBAA", Player.A),
+                Arguments.of("AAABBBABAA", Player.A),
+                Arguments.of("AAABBBABBB", Player.B)
         );
     }
 
