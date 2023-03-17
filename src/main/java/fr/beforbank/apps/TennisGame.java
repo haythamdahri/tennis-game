@@ -30,8 +30,8 @@ public class TennisGame {
             }
             System.out.printf(
                     "Player A : %s / Player B : %s%n",
-                    getScoreString(this.playerOneScore),
-                    getScoreString(this.playerTwoScore)
+                    translateScore(this.playerOneScore),
+                    translateScore(this.playerTwoScore)
             );
         }
     }
@@ -80,7 +80,7 @@ public class TennisGame {
         }
     }
 
-    private String getScoreString(int score) {
+    private String translateScore(int score) {
         return switch (score) {
             case 0 -> "0";
             case 1 -> "15";
